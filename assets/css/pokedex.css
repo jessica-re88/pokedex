@@ -1,0 +1,383 @@
+
+.pokemons {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.normal {
+    background-color: #a6a877;
+}
+
+.grass {
+    background-color: #77c850;
+}
+
+.fire {
+    background-color: #ee7f30;
+}
+
+.water {
+    background-color: #678fee;
+}
+
+.electric {
+    background-color: #f7cf2e;
+}
+
+.ice {
+    background-color: #98d5d7;
+}
+
+.ground {
+    background-color: #dfbf69;
+}
+
+.flying {
+    background-color: #a98ff0;
+}
+
+.poison {
+    background-color: #a040a0;
+}
+
+.fighting {
+    background-color: #bf3029;
+}
+
+.psychic {
+    background-color: #f65687;
+}
+
+.dark {
+    background-color: #725847;
+}
+
+.rock {
+    background-color: #b8a137;
+}
+
+.bug {
+    background-color: #a8b720;
+}
+
+.ghost {
+    background-color: #6e5896;
+}
+
+.steel {
+    background-color: #b9b7cf;
+}
+
+.dragon {
+    background-color: #6f38f6;
+}
+
+.fairy {
+    background-color: #f9aec7;
+}
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.pokemon .number {
+    color: #000;
+    opacity: .3;
+    text-align: right;
+    font-size: .625rem;
+}
+
+.pokemon .name {
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: .25rem;
+}
+
+.pokemon .detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon .detail .types {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pokemon .detail .types .type {
+    color: #fff;
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+}
+
+.pokemon .detail img {
+    max-width: 100%;
+    height: 70px;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button {
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    color: #fff;
+    background-color: #6c79db;
+    border: none;
+    border-radius: 1rem;
+}
+
+
+/* pokedex.css (ADICIONAR) */
+#pokemonDetailContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000; /* Garante que fique acima de tudo */
+    overflow-y: auto; /* Permite scroll se o conteúdo for longo */
+}
+
+.detail-screen {
+    /* Estilos básicos */
+    min-height: 100%;
+    color: #fff;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+@media screen and (min-width: 380px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* ========================================= */
+/* ESTILOS DA TELA DE DETALHES (Detail Screen) */
+/* ========================================= */
+
+#pokemonDetailContainer {
+    /* Garante que a tela de detalhes cubra TUDO e fique por cima */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* AJUSTE: Abaixa todo o conteúdo de cor */
+.detail-screen {
+    min-height: 100%;
+    /* Aumenta o padding superior para abaixar tudo o que está dentro do fundo colorido */
+    padding: 2rem 1rem 1rem 1rem; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.detail-screen header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative; /* Adicionado para ser o contexto da imagem */
+    z-index: 1010; /* Garante que o cabeçalho esteja acima da área branca */
+}
+
+.detail-screen header h2 {
+    /* Nome do Pokémon */
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.detail-screen header span {
+    /* Número do Pokémon */
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.detail-screen header button {
+    /* Botão de Fechar/Voltar (se usar um 'X' ou uma seta) */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 15px; /* Espaço entre o botão e o nome */
+}
+
+.detail-screen .main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente a imagem e a área de conteúdo */
+    flex-grow: 1;
+    /* REMOVA padding-top: 50px; ou ajuste conforme necessário */
+    padding-top: 0; 
+    position: relative; /* Para posicionar a imagem em relação a este container */
+    margin-top: 7rem; /* Ajuste para puxar a área branca para cima */
+    z-index: 1; /* Garante que a área branca fique ABAIXO da imagem */
+}
+
+.detail-screen .main-info img {
+    /* Ajustes na imagem */
+    max-width: 60%; /* Um pouco maior para se destacar */
+    height: auto;
+    /* REMOVA position: absolute; top: 150px; z-index: 1010; */
+    position: relative; /* Volta para o fluxo normal */
+    margin-top: -100px; /* Puxa a imagem para cima, sobrepondo o topo do card */
+    z-index: 2; /* Garante que a imagem fique acima do card branco */
+    max-height: 180px; /* Limita a altura para evitar imagens muito grandes */
+}
+
+.detail-screen .tabs {
+    /* Área das abas (About, Stats) */
+    width: 100%;
+    margin-top: 0px; /* Puxa as abas para cima, para começar mais perto da imagem */
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding-top: 80px; /* Cria espaço para a imagem "flutuar" acima das abas */
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Necessário para z-index */
+    z-index: 1; /* Abaixo da imagem */
+}
+
+.detail-screen .tabs button {
+    background: none;
+    border: none;
+    color: #999; /* Cor do texto padrão mais suave */
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    flex: 1; /* Faz os botões ocuparem o mesmo espaço */
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent; /* Para não aparecer a linha quando inativo */
+}
+
+.detail-screen .tabs button.active {
+    color: var(--pokemon-color, #333); /* Usa a variável CSS para a cor */
+    transform: translateY(-2px); 
+    border-bottom: 2px solid var(--pokemon-color, #333);
+}
+
+.detail-screen .tab-content {
+    background-color: white;
+    color: #333;
+    width: 100%;
+    padding: 1rem;
+    /* REMOVA padding-top: 2rem; (já temos padding-top nas abas) */
+    box-sizing: border-box;
+    border-bottom-left-radius: 1rem; /* Arredonda as bordas inferiores também */
+    border-bottom-right-radius: 1rem;
+    /* Opcional: min-height para evitar que o card branco encolha demais */
+    min-height: 200px; 
+}
+
+/* Opcional: Adicione um overlay para o tipo do Pokémon no background */
+.detail-screen.grass { --pokemon-color: #77c850; background-color: #77c850; }
+.detail-screen.fire { --pokemon-color: #ee7f30; background-color: #ee7f30; }
+.detail-screen.water { --pokemon-color: #678fee; background-color: #678fee; }
+/* ...adicione para todos os tipos */
+
+/* Esconde o conteúdo inativo da aba */
+.tab-content > div {
+    display: none;
+}
+
+.tab-content > div.active {
+    display: block;
+}
+
+/* Estilo para as barras de HP, Attack, etc. */
+.stat-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.stat-item span:first-child {
+    width: 80px; /* Largura fixa para o nome da estatística */
+    color: #666;
+    text-transform: capitalize;
+}
+
+.stat-item span:nth-child(2) {
+    width: 40px; /* Largura fixa para o valor numérico */
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.stat-bar {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background-color: var(--pokemon-color, #6c79db); /* Cor do Pokémon */
+    border-radius: 4px;
+    width: 0; /* Será preenchido por JS */
+    transition: width 0.5s ease-in-out;
+}
+
+.detail-screen .tab-content h3 {
+    color: #666;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 1.5rem;
+}
+
+.detail-screen .tab-content p {
+    margin: .5rem 0;
+    font-size: 0.9rem;
+    color: #555;
+}
