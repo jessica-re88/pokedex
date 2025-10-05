@@ -85,7 +85,7 @@ A aplicação é **100% dinâmica**, consumindo dados em tempo real da **PokeAPI
 ## 🔗 Demonstração
 
 🎮 Veja a Pokedex em ação:
-👉 👉 [Clique aqui para ver minha Pokedex online](https://jessica-re88.github.io/Meu-Portfolio/)
+👉 👉 [Clique aqui para ver minha Pokedex online](https://jessica-re88.github.io/pokedex/index.html)
 
 <div align="center">
 ---
