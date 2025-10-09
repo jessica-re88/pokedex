@@ -93,8 +93,14 @@ A aplicação é **100% dinâmica**, consumindo dados em tempo real da **PokeAPI
 ⭐ Se este projeto te inspirou, deixe uma estrela no repositório! ⭐
 
 Feito com ❤️ usando HTML, CSS, JavaScript e PokeAPI.
+ ---
+🎥 Apresentação do Projeto
 
+Gravei um vídeo mostrando como o projeto funciona na prática.
 
+Assista ao vídeo completo no LinkedIn:
+
+ [Clique aqui para ver minha Pokedex Interativa no LinkedIn](https://www.linkedin.com/posts/j%C3%A9ssica-rebello-6077001b6_frontend-javascript-html-activity-7382039036233736192-iwyr?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJLN2cBJyLKsDSAJ60k2QpjgBMAlWhijLc)
 ---
 🧩 Preview
 
